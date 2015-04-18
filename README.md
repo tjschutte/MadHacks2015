@@ -5,6 +5,6 @@ Repository location for the code used in our 2015 "Mad Hakcs" compettition. The 
   Cameron Hall,<br>
   Arel Otles,<br>
   
-<h1>Project: To be announced</h1>
+<h1>Project: Calendar</h1>
 <h3>Description of goals:</h3>
 <p></p>
