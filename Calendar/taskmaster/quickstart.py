@@ -1,15 +1,11 @@
-"""A quickstart example showing usage of the Google Calendar API."""
 from datetime import datetime
 import os
+
 from apiclient.discovery import build
 from httplib2 import Http
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
-from django.contrib.auth.models import User
-from django.db import models
-from oauth2client.django_orm import FlowField
-
 
 try:
     import argparse
@@ -21,14 +17,6 @@ SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
 CLIENT_SECRET_FILE = 'client_secret.json'
 APPLICATION_NAME = 'Calendar API Quickstart'
 
-
-class FlowModel(models.Model):
-  id = models.ForeignKey(User, primary_key=True)
-  flow = FlowField()
-  
-class CredentialsModel(models.Model):
-  id = models.ForeignKey(User, primary_key=True)
-  credential = CredentialsField()
 
 def get_credentials():
     """Gets valid user credentials from storage.
@@ -80,6 +68,11 @@ def GetEvents():
 
     return toReturn
 
+def newGetEvents():
+    user = User.Objects.filter(username = 'Tom')
+    storage = Storage(CredentialsModel, 'id', user, 'credential')
+    credential = storage.get()
+
 
 
 def main():
@@ -103,5 +96,6 @@ def main():
     for event in events:
         start = event['start'].get('dateTime', event['start'].get('date'))
         print start, event['summary']
-
+if __name__ == '__main__':
+    main()
 

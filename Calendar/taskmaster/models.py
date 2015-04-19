@@ -1,8 +1,20 @@
 from django.db import models
 import datetime
 from django.core.validators import MaxValueValidator, MinValueValidator
+
+from oauth2client.django_orm import FlowField
+from oauth2client.django_orm import CredentialsField
+from django.contrib.auth.models import User
 # Create your models here.
 
+class FlowModel(models.Model):
+  id = models.ForeignKey(User, primary_key=True)
+  flow = FlowField()
+  
+class CredentialsModel(models.Model):
+  id = models.ForeignKey(User, primary_key=True)
+  credential = CredentialsField()
+  
 class Task(models.Model):
     dueDate = models.DateTimeField('Due Date', null = True, blank=True)
     title = models.CharField(max_length=200)
