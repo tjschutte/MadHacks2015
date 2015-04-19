@@ -1,8 +1,13 @@
+html{
+	background-color: purple;
+}
+
 #calendar{
 	margin-left:10px;
 	float:left;
 	height: 500px;
 	width: 80%;
+	background-color: blue;
 }
 
 #tasks{
@@ -10,4 +15,5 @@
 	float:right;
 	height: 500px;
 	width: 15%;
+	background-color: green;
 }
