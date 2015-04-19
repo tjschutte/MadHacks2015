@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'taskmaster/indexLayoutTemplate.css' %}" />
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='calendarDiv'>
+        <table id='calendarTable'>
+            <tr>
+                <h2 id='month'>{{now}}</h3>
+            </tr>
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+            {% for week in weeks %}
+
+            <tr>
+                {% for day in week %}
+                <td>
+                    <p id='date'>{{day.day}}</p> {% for e in events %} {% if e.startDate.date == day%}
+                    <li>{{e.title}}</li>{%endif%} {%endfor%}
+
+                </td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    <div id='tasks'>
+
+
+        <div>
+
+        </div>
+</body>
+
+</html>
