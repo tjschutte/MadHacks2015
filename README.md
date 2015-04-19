@@ -7,4 +7,9 @@ Repository location for the code used in our 2015 "Mad Hakcs" compettition. The 
   
 <h1>Project: Calendar</h1>
 <h3>Description of goals:</h3>
-<p></p>
+<p>
+Create a calendar app that would utilize a raspberry pi for a server, display on a pi screen, and be usable as a replacement for a paper family calendey. We wanted:<br>
+-To use python and django to create a lightweight webhost for our calender<br>
+-Incorporate API's to get external calender data from<br>
+-Display the events in the calenders to a unified place<br>
+</p>
