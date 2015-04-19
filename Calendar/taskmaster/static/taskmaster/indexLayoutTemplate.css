@@ -1,24 +1,48 @@
 html{
-	background-color: ;
+	background-color: #74dade;
 }
 
-#dayCol{
-	width: 14%;
+#month{
+	text-align: center;
+}
+
+div{
+	height: 100%;
+}
+
+#date{
+	font-family: impact;
+	font-size: 20px;
+	margin-bottom: 0px;
 }
 
 #calendarDiv{
 	margin-left:5px;
-	margin-right: 5px;
 	float:left;
-	height: 100%;
 	width: 80%;
-	background-color: #CCFFFF;
+	background-color: #45d17a;
+}
+#calendarTable{
+	margin-left:5px;
+	margin-right: 5px;
+	width: 98%;
+	height: 89%;
+	border-radius: 5px;
+}
+
+th{
+	width: 14%;
+}
+
+td{
+	vertical-align: text-top;
+	height: 24%;
+	border-radius: 5px;
 }
 
 #tasks{
 	margin-right:5px;
 	float:right;
-	height: 500px;
-	width: 15%;
-	background-color: green;
+	width: 19%;
+	background-color: #acacac;
 }

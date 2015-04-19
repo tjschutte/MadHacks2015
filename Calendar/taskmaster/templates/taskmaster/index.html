@@ -15,23 +15,23 @@
     <div id='calendarDiv'>
         <table id='calendarTable'>
             <tr>
-                <h3>{{now}}</h3>
+                <h2 id='month'>{{now}}</h3>
             </tr>
             <tr>
-                <th id='dayCol'>Sunday</th>
-                <th id='dayCol'>Monday</th>
-                <th id='dayCol'>Tuesday</th>
-                <th id='dayCol'>Wednesday</th>
-                <th id='dayCol'>Thursday</th>
-                <th id='dayCol'>Friday</th>
-                <th id='dayCol'>Saturday</th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
             </tr>
             {% for week in weeks %}
 
             <tr>
                 {% for day in week %}
                 <td>
-                    {{day.day}} {% for e in events %} {% if e.startDate.date == day%}
+                    <p id='date'>{{day.day}}</p> {% for e in events %} {% if e.startDate.date == day%}
                     <li>{{e.title}}</li>{%endif%} {%endfor%}
 
                 </td>
