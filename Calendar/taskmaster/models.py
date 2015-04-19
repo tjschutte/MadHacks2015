@@ -8,17 +8,21 @@ class Task(models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=400)
     category = models.ForeignKey('Category')
+    def __string__(self):
+        return self.title
 
 class Category(models.Model):
     name = models.CharField(primary_key=True, max_length=100)
     color = models.ForeignKey('Color')
 
 class Event(models.Model):
-    startDate = models.DateTimeField('Start')
+    startDate = models.DateTimeField('startDate')
     endDate = models.DateTimeField('End')
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=400)
     category = models.ForeignKey('Category', null=True, blank= True)
+    def getStartDate(self):
+        return self.startDate
     
 class Color(models.Model):
     R = models.IntegerField(
