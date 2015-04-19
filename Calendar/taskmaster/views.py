@@ -4,7 +4,10 @@ from django.template import RequestContext, loader
 from datetime import datetime, timedelta
 from django.utils import timezone
 from .models import Event
+#import quickstart
+
 # Create your views here.
+
 
 def index(request):
     now = datetime.now().date()
