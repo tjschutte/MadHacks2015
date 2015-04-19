@@ -7,7 +7,7 @@ class Task(models.Model):
     dueDate = models.DateTimeField('Due Date', null = True, blank=True)
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=400)
-    category = models.ForeignKey('Category')
+    category = models.ForeignKey('Category', null = True, blank=True)
     def __string__(self):
         return self.title
 
