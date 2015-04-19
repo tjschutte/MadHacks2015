@@ -31,9 +31,9 @@
             <tr>
                 {% for day in week %}
                 <td>
-                    <p id='date'>{{day.day}}</p> {% for e in events %} {% if e.startDate.date == day%}
+                    <p id='date'>{{day.day}}</p> {% for e in events %} {% if e.startDate.day == day.day %}
                     <li>{{e.title}}</li>{%endif%} {%endfor%}
-
+                    
                 </td>
                 {%endfor%}
             </tr>
