@@ -1,5 +1,5 @@
 html{
-	background-color: purple;
+	background-color: ;
 }
 
 #calendar{
@@ -7,7 +7,7 @@ html{
 	float:left;
 	height: 500px;
 	width: 80%;
-	background-color: blue;
+	background-color: ;
 }
 
 #tasks{
@@ -15,5 +15,5 @@ html{
 	float:right;
 	height: 500px;
 	width: 15%;
-	background-color: green;
+	background-color: ;
 }
