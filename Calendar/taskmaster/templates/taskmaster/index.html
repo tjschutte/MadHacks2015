@@ -12,19 +12,19 @@
 </head>
 
 <body>
-    <div id='calendar'>
-        <table>
+    <div id='calendarDiv'>
+        <table id='calendarTable'>
             <tr>
                 <h3>{{now}}</h3>
             </tr>
             <tr>
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
+                <th id='dayCol'>Sunday</th>
+                <th id='dayCol'>Monday</th>
+                <th id='dayCol'>Tuesday</th>
+                <th id='dayCol'>Wednesday</th>
+                <th id='dayCol'>Thursday</th>
+                <th id='dayCol'>Friday</th>
+                <th id='dayCol'>Saturday</th>
             </tr>
             {% for week in weeks %}
 
