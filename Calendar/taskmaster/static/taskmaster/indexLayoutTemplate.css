@@ -1,0 +1,24 @@
+html{
+	background-color: ;
+}
+
+#dayCol{
+	width: 14%;
+}
+
+#calendarDiv{
+	margin-left:5px;
+	margin-right: 5px;
+	float:left;
+	height: 100%;
+	width: 80%;
+	background-color: #CCFFFF;
+}
+
+#tasks{
+	margin-right:5px;
+	float:right;
+	height: 500px;
+	width: 15%;
+	background-color: green;
+}
