@@ -13,7 +13,7 @@ def index(request):
     dayOfWeek = now.weekday()
     if(dayOfWeek != 6):
         temp = temp - timedelta(days=dayOfWeek + 1)
-    events = Event.objects.all().filter(startDate = temp)
+    events = Event.objects.all()
     r =0
     while(r < 4):
         days = []

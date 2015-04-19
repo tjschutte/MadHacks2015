@@ -10,34 +10,34 @@
 </head>
 
 <body>
-    {%for event in events %}
-    <li>{{event.title}}</li>
-    {%endfor%}
-    <table>
-        <tr>
-            <h3>{{now}}</h3>
-        </tr>
-        <tr>
-            <th>Sunday</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-        </tr>
-        {% for week in weeks %}
+    <div>
+        <table>
+            <tr>
+                <h3>{{now}}</h3>
+            </tr>
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+            {% for week in weeks %}
 
-        <tr>
-            {% for day in week %}
-            <td>
-                {{day.day}}
+            <tr>
+                {% for day in week %}
+                <td>
+                    {{day.day}} {% for e in events %} {% if e.startDate.date == day%}
+                    <li>{{e.title}}</li>{%endif%} {%endfor%}
 
-            </td>
+                </td>
+                {%endfor%}
+            </tr>
             {%endfor%}
-        </tr>
-        {%endfor%}
-    </table>
+        </table>
+    </div>
 </body>
 
 </html>
