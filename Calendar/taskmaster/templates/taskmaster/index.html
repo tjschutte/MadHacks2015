@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="tooMuchStyle.css"></link>
     <style>
         table,
         td {
@@ -10,7 +11,7 @@
 </head>
 
 <body>
-    <div>
+    <div id='calendar'>
         <table>
             <tr>
                 <h3>{{now}}</h3>
@@ -37,6 +38,9 @@
             </tr>
             {%endfor%}
         </table>
+    </div>
+    <div id='tasks'>
+
     </div>
 </body>
 
