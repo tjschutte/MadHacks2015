@@ -19,7 +19,10 @@ def index(request):
         temp = temp - timedelta(days=dayOfWeek + 1)
     eventsAll = []
     events = Event.objects.all()
-    eventsAll.extend(quickstart.GetEvents())
+##    try:
+##        eventsAll.extend(quickstart.GetEvents())
+##    except deleted_client:
+##        print "Could not get user's events from google"
     for e in eventsAll:
         print e.title
     eventsAll.extend(events)
