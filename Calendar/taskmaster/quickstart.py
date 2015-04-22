@@ -6,12 +6,8 @@ from httplib2 import Http
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
+from .models import Event
 
-try:
-    import argparse
-    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-except ImportError:
-    flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -58,14 +54,14 @@ def GetEvents():
     now = datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print 'Getting the upcoming 10 events'
     eventsResult = service.events().list(
-        calendarId='primary', timeMin=now, maxResults=10, singleEvents=True,
+        calendarId='primary', timeMin=now, maxResults=100, singleEvents=True,
         orderBy='startTime').execute()
     events = eventsResult.get('items', [])
     toReturn = []
     for e in events:
-        toAdd = Event(startDate = ['start'].get('dateTime', event['start'].get('date')), title= e['summary'])
+        toAdd = Event(startDate = datetime.strptime(e['start'].get('dateTime', e['start'].get('date'))[0:10], '%Y-%M-%d'), title= e['summary'])
         toReturn.append(toAdd)
-
+        print toAdd.startDate.date()
     return toReturn
 
 def newGetEvents():
@@ -74,28 +70,28 @@ def newGetEvents():
     credential = storage.get()
 
 
-
-def main():
-    """Shows basic usage of the Google Calendar API.
-
-    Creates a Google Calendar API service object and outputs a list of the next
-    10 events on the user's calendar.
-    """
-    credentials = get_credentials()
-    service = build('calendar', 'v3', http=credentials.authorize(Http()))
-
-    now = datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
-    print 'Getting the upcoming 10 events'
-    eventsResult = service.events().list(
-        calendarId='primary', timeMin=now, maxResults=10, singleEvents=True,
-        orderBy='startTime').execute()
-    events = eventsResult.get('items', [])
-
-    if not events:
-        print 'No upcoming events found.'
-    for event in events:
-        start = event['start'].get('dateTime', event['start'].get('date'))
-        print start, event['summary']
-if __name__ == '__main__':
-    main()
+##
+##def main():
+##    """Shows basic usage of the Google Calendar API.
+##
+##    Creates a Google Calendar API service object and outputs a list of the next
+##    10 events on the user's calendar.
+##    """
+##    credentials = get_credentials()
+##    service = build('calendar', 'v3', http=credentials.authorize(Http()))
+##
+##    now = datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
+##    print 'Getting the upcoming 10 events'
+##    eventsResult = service.events().list(
+##        calendarId='primary', timeMin=now, maxResults=10, singleEvents=True,
+##        orderBy='startTime').execute()
+##    events = eventsResult.get('items', [])
+##
+##    if not events:
+##        print 'No upcoming events found.'
+##    for event in events:
+##        start = event['start'].get('dateTime', event['start'].get('date'))
+##        print start, event['summary']
+##if __name__ == '__main__':
+##    main()
 

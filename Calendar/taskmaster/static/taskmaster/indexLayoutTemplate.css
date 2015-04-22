@@ -1,48 +1,41 @@
-html{
-	background-color: #74dade;
+html {
+    background-color: red;
 }
-
-#month{
-	text-align: center;
+#month {
+    text-align: center;
 }
-
-div{
-	height: 100%;
+div {
+    height: 2000px;
 }
-
-#date{
-	font-family: impact;
-	font-size: 20px;
-	margin-bottom: 0px;
+#date {
+    font-family: impact;
+    font-size: 20px;
+    margin-bottom: 0px;
 }
-
-#calendarDiv{
-	margin-left:5px;
-	float:left;
-	width: 80%;
-	background-color: #45d17a;
+#calendarDiv {
+    margin-left: 5px;
+    float: left;
+    width: 80%;
+    background-color: #45d17a;
 }
-#calendarTable{
-	margin-left:5px;
-	margin-right: 5px;
-	width: 98%;
-	height: 89%;
-	border-radius: 5px;
+#calendarTable {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 98%;
+    height: 89%;
+    border-radius: 5px;
 }
-
-th{
-	width: 14%;
+th {
+    width: 14%;
 }
-
-td{
-	vertical-align: text-top;
-	height: 24%;
-	border-radius: 5px;
+td {
+    vertical-align: text-top;
+    height: 24%;
+    border-radius: 5px;
 }
-
-#tasks{
-	margin-right:5px;
-	float:right;
-	width: 19%;
-	background-color: #acacac;
+#tasks {
+    margin-right: 5px;
+    float: right;
+    width: 19%;
+    background-color: #acacac;
 }
