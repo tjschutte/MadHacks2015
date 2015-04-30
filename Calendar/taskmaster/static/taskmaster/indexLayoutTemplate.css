@@ -1,12 +1,25 @@
 html {
-    background-color: red;
+    background-color: #556270;
 }
 #month {
     text-align: center;
+    font-size: 30px;
 }
-div {
-    height: 2000px;
+
+#header{
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    width: 75%;
+    background: #FF6B6B;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+
 #date {
     font-family: impact;
     font-size: 20px;
@@ -16,13 +29,14 @@ div {
     margin-left: 5px;
     float: left;
     width: 80%;
-    background-color: #45d17a;
+    border-radius: 5px;
+    background-color: #4ECDC4;
 }
 #calendarTable {
     margin-left: 5px;
     margin-right: 5px;
     width: 98%;
-    height: 89%;
+    height: 1600px;
     border-radius: 5px;
 }
 th {
@@ -37,5 +51,7 @@ td {
     margin-right: 5px;
     float: right;
     width: 19%;
-    background-color: #acacac;
+    height: 1683px;
+    border-radius: 5px;
+    background-color: #C7F464;
 }
